@@ -17,7 +17,7 @@ Two flags in that file matter:
 | --- | --- |
 | `appName` | Rename the app in all three documents with one edit. |
 | `appStoreId` | `6768835882`. Drives the Download link on the landing page. |
-| `analyticsEnabled` | `false` says the app collects no analytics. **Flip to `true` in the same commit that ships the PostHog SDK** — the privacy policy swaps to the PostHog disclosure automatically. |
+| `analyticsEnabled` | Currently `true`, so the privacy policy discloses PostHog. It promises two things the app must actually do: never send journal content in an event, and offer an off switch in the app's settings. |
 | `jurisdiction` | **Unconfirmed.** Currently Ontario, Canada. Must match where Smallwoken Labs is actually registered. |
 
 ## Local

@@ -45,11 +45,11 @@ export const site = {
   effectiveDateISO: "2026-08-29",
 
   /**
-   * Flip to true in the same change that ships the PostHog SDK, never before
-   * it. A privacy policy that describes collection the app is not yet doing
-   * is as wrong as one that omits collection it is.
+   * True once the PostHog SDK ships. The policy's analytics section makes two
+   * promises the app has to keep: journal content never leaves in an event,
+   * and there is an off switch in Settings.
    */
-  analyticsEnabled: false,
+  analyticsEnabled: true,
 
   plans: [
     { name: "Monthly", usd: "$4.99 USD", cad: "$4.99 CAD", period: "month", renews: true },
