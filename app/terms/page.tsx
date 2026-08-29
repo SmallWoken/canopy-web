@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Doc } from "@/components/Doc";
+import { Doc, type Section } from "@/components/Doc";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Use",
+  title: "Terms of Service",
   description: `The agreement between you and ${site.entity} covering your use of ${site.appName}, including subscriptions, billing, and cancellation.`,
   alternates: { canonical: "/terms" },
 };
@@ -11,11 +11,32 @@ export const metadata: Metadata = {
 const renewing = site.plans.filter((p) => p.renews);
 const lifetime = site.plans.find((p) => !p.renews);
 
+const sections: Section[] = [
+  { id: "agreement", title: "This agreement" },
+  { id: "license", title: "Licence" },
+  { id: "your-content", title: "Your content stays yours" },
+  { id: "subscriptions", title: "Subscriptions and payment" },
+  { id: "availability", title: "Changes to the App" },
+  { id: "support", title: "Maintenance and support" },
+  { id: "warranty", title: "Warranty disclaimer" },
+  { id: "not-medical", title: "Not medical or professional advice" },
+  { id: "liability", title: "Limitation of liability" },
+  { id: "claims", title: "Product claims" },
+  { id: "ip", title: "Intellectual property" },
+  { id: "legal-compliance", title: "Legal compliance" },
+  { id: "apple", title: "Apple as third-party beneficiary" },
+  { id: "termination", title: "Termination" },
+  { id: "governing-law", title: "Governing law" },
+  { id: "general", title: "General" },
+  { id: "contact", title: "Contact" },
+];
+
 export default function TermsPage() {
   return (
     <Doc
-      title="Terms of Use"
-      intro={
+      title="Terms of Service"
+      sections={sections}
+      summary={
         <>
           <strong>Read this first.</strong> This is the End User License
           Agreement between you and {site.entity} for {site.appName}. It is an
@@ -27,7 +48,7 @@ export default function TermsPage() {
     >
       <h2 id="agreement">1. This agreement</h2>
       <p>
-        These Terms of Use (the &ldquo;Terms&rdquo;) are a binding agreement
+        These Terms of Service (the &ldquo;Terms&rdquo;) are a binding agreement
         between you and {site.entity} (&ldquo;we&rdquo;, &ldquo;us&rdquo;)
         governing your use of the {site.appName} application for iOS and any
         updates to it (the &ldquo;App&rdquo;). They incorporate our{" "}

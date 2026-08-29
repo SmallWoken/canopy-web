@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Doc } from "@/components/Doc";
+import { Doc, type Section } from "@/components/Doc";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -8,11 +8,29 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
+const sections: Section[] = [
+  { id: "who-we-are", title: "Who we are" },
+  { id: "on-device", title: "What stays on your device" },
+  { id: "permissions", title: "Device permissions, and what each one is for" },
+  { id: "purchases", title: "Purchases and subscriptions" },
+  { id: "analytics", title: "Analytics" },
+  { id: "backups", title: "Backups and iCloud" },
+  { id: "website", title: "This website" },
+  { id: "children", title: "Children" },
+  { id: "retention", title: "How long anything is kept" },
+  { id: "rights", title: "Your rights" },
+  { id: "transfers", title: "International transfers" },
+  { id: "security", title: "Security" },
+  { id: "changes", title: "Changes to this policy" },
+  { id: "contact", title: "Contact" },
+];
+
 export default function PrivacyPage() {
   return (
     <Doc
       title="Privacy Policy"
-      intro={
+      sections={sections}
+      summary={
         <>
           <strong>The short version.</strong> {site.appName} is a journal that
           keeps your writing on your device. We do not have a server that holds
@@ -205,12 +223,22 @@ export default function PrivacyPage() {
 
       <h2 id="children">8. Children</h2>
       <p>
-        {site.appName} is not directed to children under {site.minimumAge}, and
-        we do not knowingly collect personal information from them. If you
-        believe a child under {site.minimumAge} has provided us with personal
-        information, contact us at{" "}
+        {site.appName} carries a {site.contentRating} App Store content rating,
+        which means it contains nothing age-inappropriate. That is a separate
+        question from who the app is for:{" "}
+        <strong>
+          {site.appName} is not directed to children under {site.minimumAge}
+        </strong>
+        , our <a href="/terms">Terms of Service</a> require that age to use it,
+        and we do not knowingly collect personal information from anyone
+        younger.
+      </p>
+      <p>
+        If you believe a child under {site.minimumAge} has provided us with
+        personal information, contact us at{" "}
         <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> and we
-        will delete what we hold.
+        will delete what we hold. In practice there is very little to delete —
+        as described above, journal content never reaches us.
       </p>
 
       <h2 id="retention">9. How long anything is kept</h2>

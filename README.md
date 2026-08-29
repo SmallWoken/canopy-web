@@ -1,8 +1,9 @@
 # canopy-web
 
-The public site for **Canopy** at `canopy.smallwoken.world` — privacy policy,
-terms of use, and support. Static Next.js, no database, no analytics, no
-cookies.
+The public site for **Canopy** at `canopy.smallwoken.world` — a white page with
+three links (Privacy Policy · Download · Terms of Service), plus the documents
+behind them and a support page. Static Next.js, system font, no database, no
+analytics, no cookies.
 
 ## Editing
 
@@ -15,6 +16,7 @@ Two flags in that file matter:
 | Field | What it does |
 | --- | --- |
 | `appName` | Rename the app in all three documents with one edit. |
+| `appStoreId` | `6768835882`. Drives the Download link on the landing page. |
 | `analyticsEnabled` | `false` says the app collects no analytics. **Flip to `true` in the same commit that ships the PostHog SDK** — the privacy policy swaps to the PostHog disclosure automatically. |
 | `jurisdiction` | **Unconfirmed.** Currently Ontario, Canada. Must match where Smallwoken Labs is actually registered. |
 
@@ -65,6 +67,10 @@ correct for Next.js, and no environment variables are needed.
 | License Agreement (EULA) | `https://canopy.smallwoken.world/terms` |
 | Support URL | `https://canopy.smallwoken.world/support` |
 | Marketing URL (optional) | `https://canopy.smallwoken.world` |
+
+The support page is not linked from the landing page by design — the landing
+page is the three links you asked for — but it is live, indexed, and linked
+from both documents.
 
 The EULA URL goes in **App Information → License Agreement → Custom**, and the
 same link should be reachable from the subscription screen in the app, next to

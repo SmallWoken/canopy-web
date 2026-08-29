@@ -10,6 +10,8 @@ export const site = {
   /** Change this one string if the app ships under a different name. */
   appName: "Canopy",
   bundleId: "world.smallwoken.canopy",
+  appStoreId: "6768835882",
+  appStoreUrl: "https://apps.apple.com/app/id6768835882",
 
   entity: "Smallwoken Labs",
   contactEmail: "contact@smallwoken.world",
@@ -29,12 +31,14 @@ export const site = {
   },
 
   /**
-   * The Terms require this age. It is deliberately higher than the App Store
-   * content rating: a 4+ rating says the app holds nothing objectionable,
-   * while this says who may enter a contract and keeps Canopy outside the
-   * scope of children's-privacy law.
+   * Two different numbers that are often confused, and both are correct:
+   * Canopy's App Store content rating is 4+, which says the app contains
+   * nothing objectionable. This is the contractual minimum age, which says
+   * who may agree to the Terms, and keeps Canopy outside the scope of
+   * children's-privacy law. Nearly every 4+ app sets it at 13.
    */
   minimumAge: 13,
+  contentRating: "4+",
 
   /** Displayed on each document and used for the dateModified metadata. */
   effectiveDate: "August 29, 2026",
@@ -58,6 +62,6 @@ export const site = {
 
 export const pages = [
   { href: "/privacy", title: "Privacy Policy", blurb: "What Canopy stores, what leaves your device, and what we can and cannot see." },
-  { href: "/terms", title: "Terms of Use", blurb: "The agreement covering your use of Canopy, including subscriptions and billing." },
+  { href: "/terms", title: "Terms of Service", blurb: "The agreement covering your use of Canopy, including subscriptions and billing." },
   { href: "/support", title: "Support", blurb: "How to get help, manage a subscription, or export and delete your journals." },
 ] as const;

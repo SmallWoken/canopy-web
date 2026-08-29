@@ -13,7 +13,7 @@ export default function SupportPage() {
     <Doc
       title="Support"
       dated={false}
-      intro={
+      summary={
         <>
           Email <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>{" "}
           and a person will read it. Include your device model and iOS version,

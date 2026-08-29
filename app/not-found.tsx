@@ -2,20 +2,14 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="mx-auto w-full max-w-2xl px-6 py-24">
-      <h1 className="font-display text-3xl font-semibold tracking-tight">
-        Nothing on this page
-      </h1>
-      <p className="mt-3 text-ink-soft">
-        The link may be out of date.{" "}
-        <Link
-          href="/"
-          className="underline decoration-accent underline-offset-2 hover:text-ink"
-        >
-          Start from the top
+    <main className="min-h-dvh flex items-center justify-center px-6 text-center">
+      <p>
+        Nothing here.{" "}
+        <Link href="/" className="underline underline-offset-2">
+          Go back
         </Link>
         .
       </p>
-    </div>
+    </main>
   );
 }
